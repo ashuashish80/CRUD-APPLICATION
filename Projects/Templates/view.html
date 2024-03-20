@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read</title>
+</head>
+<body> 
+    <table border="1">
+        <th>ID</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Current Loaction</th>
+        <th>Mobile Number</th>
+    
+    
+    {% if views %}
+    
+      {% for view in views %}
+        <tr>
+            <td>{{view.id}}</td>
+            <td>{{view.name}}</td>
+            <td>{{view.Address}}</td>
+            <td>{{view.CurrentLoactio}}</td>
+            <td>{{view.mobilenumber}}</td>
+        </tr>
+      {% endfor %}
+    
+    {% endif %}
+    
+    
+</table>
+<br>
+<h2>GET DETAILS BY ID</h2>
+<form action="" method="post">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" value ='Get Details'>
+
+    <table border="1">
+        <th>ID</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Current Loaction</th>
+        <th>Mobile Number</th>
+    
+    
+    {% if singledata %}
+        <tr>
+            <td>{{singledata.id}}</td>
+            <td>{{singledata.name}}</td>
+            <td>{{singledata.Address}}</td>
+            <td>{{singledata.CurrentLoactio}}</td>
+            <td>{{singledata.mobilenumber}}</td>
+        </tr>
+
+    {% endif %}
+
+    
+    
+</table>
+</form>
+{% if Ashish %}
+{% for message in Ashish %}
+{{ message }}
+{% endfor %}
+{% endif %}
+</body>
+</html>

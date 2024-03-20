@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete</title>
+</head>
+<body>
+    <h2>DELETE PAGE</h2>
+
+    <form action="" method="post">
+        {% csrf_token %}
+        id <input type="text" name = 'id'>
+        <input type="submit" value="getdata">
+    </form>
+    {% if message1 %}
+            {% for messag in messages %}
+                {{ messag }}
+            {% endfor %}
+        {% endif %}
+
+    {% if cont %}
+      
+    ID : {{cont.id}} <br>
+    Name : 	{{cont.name}} <br>
+    Address	Current : {{cont.Address}} <br>
+    Loaction :	{{cont.Loaction}} <br>
+    Mobile Numbe : {{cont.Mobile}} <br>
+    {% endif %}
+    <br>
+        
+</body>
+</html>
